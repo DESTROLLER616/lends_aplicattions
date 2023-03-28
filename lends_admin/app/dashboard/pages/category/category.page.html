@@ -1,0 +1,41 @@
+
+<ion-header>
+    <ion-toolbar>
+      <ion-title>test</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <div class="container">
+      <h2>Categories</h2>
+
+      <div class="sub-container">
+
+        <form #categoryForm="ngForm" (ngSubmit)="addCategory(categoryForm)">
+
+          <!-- <input type="hidden" name="_id" [(ngModel)]="category._id"> -->
+
+          <ion-item class="form-part">
+            <ion-label color="primary" position="floating">Category name</ion-label>
+            <ion-input type="text" color="primary" placeholder="Enter category name" [(ngModel)]="category.name" name="name" require minlength="4"></ion-input>
+            <!-- <ion-note color="tertiary" *ngIf="category.name.valid">Enter a category</ion-note> -->
+          </ion-item>
+
+          <ion-item>
+            <ion-textarea color="primary" placeholder="Category description" [(ngModel)]="category.description" name="description"></ion-textarea>
+          </ion-item>
+
+          <button class="save-button">Save</button>
+
+        </form>
+        
+      </div>
+      
+    </div>
+
+    <section>
+      <app-table-category [created]="created"></app-table-category>
+    </section>
+      
+      
+  </ion-content>

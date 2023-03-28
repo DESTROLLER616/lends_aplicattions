@@ -1,0 +1,38 @@
+<ion-menu contentId="main-content" auto-hide="false">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Main menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding" contentId="main-content">
+
+    <div *ngFor="let p of pages; let i = index">
+      <ion-item lines="none" routerLink="{{ p.url }}" routerLinkActive="active">
+        <ion-icon color="primary" aria-hidden="true" slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+        <ion-label>{{ p.path }}</ion-label>
+      </ion-item>
+    </div>
+
+    <ion-button color="danger" fill="outline" expand="block" (click)="logout()">
+      <ion-icon slot="start" name="log-out"></ion-icon>
+      Logout
+    </ion-button>
+
+  </ion-content>
+</ion-menu>
+
+<div class="ion-page">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Lends administration App</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+
+
+</div>
