@@ -1,0 +1,80 @@
+<div class="control-table">
+  <ion-button color="secondary"> <ion-icon name="remove"></ion-icon> </ion-button>
+  <p>{{ pageNumber }}</p>
+  <ion-button color="danger"> <ion-icon name="add"></ion-icon> </ion-button>
+  <ion-button (click)="getSection()"> <ion-icon name="refresh-outline"></ion-icon> </ion-button>
+</div>
+
+<table>
+
+  <thead>
+    <tr>
+      <th class="th r1">Name</th>
+      <th class="th r2">Image</th>
+      <th class="th r3">Operations</th>
+    </tr>
+  </thead>
+
+  <!-- <tbody>
+    <tr *ngFor="let section of sections">
+      <th>{{ section.title }}</th>
+      <th> <ion-img src="{{ section.image }}" alt="{{ section.title }}" id="image-section"></ion-img> </th>
+      <th>
+        <ion-button id="button-icon" (click)="updateSection(section._id, section.title, section.image)"> <ion-icon name="create"></ion-icon> </ion-button>
+        <ion-button color="danger" (click)="deleteSection(section._id, section.title, section.image)"> <ion-icon name="close-circle"></ion-icon> </ion-button>
+      </th>
+    </tr>
+  </tbody> -->
+
+  <tbody>
+    <tr>
+      <th>Solo por hoy</th>
+      <th> <ion-img src="../../../../../assets/icon/only_today.jpg" id="image-section"></ion-img> </th>
+      <th>
+        <ion-button id="button-icon" (click)="updateSection(section._id, section.title, section.image)"> <ion-icon name="create"></ion-icon> </ion-button>
+        <ion-button color="danger" (click)="deleteSection(section._id, section.title, section.image)"> <ion-icon name="close-circle"></ion-icon> </ion-button>
+      </th>
+    </tr>
+
+    <tr>
+      <th>Fiesta</th>
+      <th> <ion-img src="../../../../../assets/icon/party.png" id="image-section"></ion-img> </th>
+      <th>
+        <ion-button id="button-icon" (click)="updateSection(section._id, section.title, section.image)"> <ion-icon name="create"></ion-icon> </ion-button>
+        <ion-button color="danger" (click)="deleteSection(section._id, section.title, section.image)"> <ion-icon name="close-circle"></ion-icon> </ion-button>
+      </th>
+    </tr>
+  </tbody>
+
+</table>
+
+<section [hidden]="isHidden">
+  <div class="title">
+    <h2>Update</h2>
+    <ion-button slot="end" size="large" fill="clear" (click)="closeUpdate()"> <ion-icon name="close-circle" size="large"></ion-icon> </ion-button>
+  </div>
+
+  <div class="form-update">
+    
+    <form #sectionUpdate="ngForm" (submit)="updateSection(section._id, section.title, section.image)">
+
+      <input type="hidden" name="_id" value="{{ section._id }}" [(ngModel)]="section._id">
+
+      <ion-item>
+        <ion-label position="floating" color="primary">Section name</ion-label>
+        <ion-input type="text" name="name" value="{{ section.title }}" [(ngModel)]="section.title"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="floating" color="primary">Section url image</ion-label>
+        <ion-input type="text" name="url" value="{{image}}" [(ngModel)]="section.image" (keyup)="imagePreview(section.image)"></ion-input>
+      </ion-item>
+
+      <ion-img [src]="image" id="image-preview-update" ionError="Image not found"></ion-img>
+      <img [src]="image" id="image-preview-update" alt="not found">
+
+    </form>
+
+  </div>
+
+</section>

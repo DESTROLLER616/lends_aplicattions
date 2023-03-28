@@ -1,0 +1,40 @@
+.container {
+    width: 90%;
+    margin: 20px auto 0 auto;
+}
+
+.danger-img {
+    width: 50%;
+    margin: auto;
+    border: black 1px solid;
+}
+
+#image-alert {
+    width: 50%;
+    margin: auto;
+}
+
+.container h3 {
+    text-align: center;
+    font-weight: 700;
+}
+
+@media only screen and (min-width: 800px) {
+    #image-alert {
+        width: 25%;
+        margin: 0;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .container h3 {
+        width: 50%;
+    }
+
+    .message {
+        width: 50%;
+    }
+}

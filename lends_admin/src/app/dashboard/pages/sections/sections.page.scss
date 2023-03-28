@@ -1,0 +1,38 @@
+main  {
+    width: 90%;
+    margin: auto;
+}
+
+h2 {
+    margin-bottom: 30px;
+}
+
+.container {
+    box-shadow: 3px 3px 3px 3px hsla(326, 0%, 79%, 1);
+    padding-bottom: 15px;
+    max-width: 500px;
+    margin: auto;
+}
+
+.sub-container {
+    width: 85%;
+    margin: auto;
+}
+
+.table-section {
+    margin: auto;
+    width: 90% ;
+}
+
+#save-button {
+    margin-top: 20px;
+}
+
+#image-preview {
+    width: 50%;
+    margin: 15px auto 15px auto;
+}
+
+@media only screen and (min-width: 800px) {
+
+}
